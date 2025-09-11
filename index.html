@@ -1,248 +1,862 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MikolajMedia — Content Strategist & Marketing Expert</title>
-  <meta name="description" content="Systemy content marketingu, które generują miliony wyświetleń i tysiące leadów. Montaż short/long form, produkcja wideo, social media, e‑mail marketing." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MikolajMedia - 44+ Mln Wyświetleń</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            border-bottom: 2px solid #2563eb;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            padding: 120px 20px 80px;
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-left h1 {
+            font-size: 56px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        .blue {
+            color: #2563eb;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #cccccc;
+            margin-bottom: 30px;
+        }
+
+        .stats-container {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-box {
+            flex: 1;
+            background: rgba(37, 99, 235, 0.1);
+            border: 2px solid #2563eb;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .stat-box:hover {
+            background: rgba(37, 99, 235, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 12px;
+            color: #cccccc;
+            margin-top: 8px;
+            text-transform: uppercase;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 15px 35px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            border: 2px solid #2563eb;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #2563eb;
+        }
+
+        .btn-outline:hover {
+            background: #2563eb;
+        }
+
+        .visual-box {
+            background: rgba(26, 26, 26, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid #2563eb;
+        }
+
+        .visual-box h3 {
+            color: #2563eb;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .visual-box p {
+            text-align: center;
+            color: #cccccc;
+            margin-bottom: 25px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .metric-item {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .metric-number {
+            display: block;
+            font-size: 20px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            color: #cccccc;
+            margin-top: 5px;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 20px;
+        }
+
+        .services-section {
+            background: #0a0a0a;
+        }
+
+        .portfolio-section {
+            background: #000;
+        }
+
+        .process-section {
+            background: #0a0a0a;
+        }
+
+        .contact-section {
+            background: #000;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #cccccc;
+            margin-bottom: 50px;
+            font-size: 18px;
+        }
+
+        /* Services */
+        .service-category-title {
+            text-align: center;
+            color: #2563eb;
+            font-size: 32px;
+            margin: 60px 0 40px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background: rgba(26, 26, 26, 0.9);
+            padding: 35px;
+            border-radius: 15px;
+            border: 2px solid #333;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: #2563eb;
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .service-card h3 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .service-card p {
+            color: #cccccc;
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+        }
+
+        .service-features li {
+            color: #cccccc;
+            padding: 8px 0;
+            font-size: 14px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            color: #2563eb;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .price {
+            font-size: 24px;
+            color: #2563eb;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .premium-card {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(0, 0, 0, 0.9));
+            border: 3px solid #2563eb;
+            position: relative;
+            padding: 40px;
+            grid-column: span 2;
+        }
+
+        .premium-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2563eb;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .premium-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .premium-feature {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .premium-feature strong {
+            color: #2563eb;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Portfolio */
+        .portfolio-showcase {
+            background: rgba(26, 26, 26, 0.6);
+            padding: 50px;
+            border-radius: 20px;
+            border: 2px solid #2563eb;
+        }
+
+        .portfolio-showcase h3 {
+            text-align: center;
+            color: #2563eb;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .portfolio-stat {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .portfolio-number {
+            font-size: 32px;
+            color: #2563eb;
+            font-weight: bold;
+            display: block;
+        }
+
+        .portfolio-label {
+            color: #cccccc;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            padding: 12px 25px;
+            background: rgba(37, 99, 235, 0.1);
+            border: 2px solid #2563eb;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        /* Process - 3x2 Grid */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(26, 26, 26, 0.5);
+            border-radius: 20px;
+            border: 1px solid #2563eb;
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: #2563eb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+            color: white;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .contact-info h3 {
+            color: #2563eb;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .contact-form-wrapper {
+            background: rgba(26, 26, 26, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid #2563eb;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #333;
+            color: white;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 18px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 2px solid #2563eb;
+            background: #000;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .process-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+            .premium-card {
+                grid-column: span 1;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Progress bar for scroll -->
-  <div class="progress-bar" aria-hidden="true"></div>
-
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="container nav-content">
-      <a class="logo" href="#start">Mikolaj<span style="color:#e74c3c">Media</span></a>
-      <nav class="nav-links">
-        <a href="#start">Start</a>
-        <a href="#uslugi">Usługi</a>
-        <a href="#rezultaty">Portfolio</a>
-        <a href="#proces">Proces</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
-      <button class="mobile-menu-btn" aria-label="menu">☰</button>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <main id="start" class="hero">
-    <div class="container hero-content">
-      <div class="hero-left">
-        <h1>44+ milionów wyświetleń — to moja wizytówka</h1>
-        <p class="subtitle">Tworzę systemy content marketingu, które generują miliony wyświetleń i tysiące leadów dla najbardziej wymagających klientów.</p>
-
-        <div class="stats-container">
-          <div class="stat"><strong>30M+</strong><span>Facebook</span></div>
-          <div class="stat"><strong>11M+</strong><span>TikTok</span></div>
-          <div class="stat"><strong>3M+</strong><span>YouTube</span></div>
-          <div class="stat"><strong>37K</strong><span>FB Followers</span></div>
-        </div>
-
-        <div class="cta-buttons">
-          <a class="btn btn-primary" href="#kontakt">Bezpłatna konsultacja</a>
-          <a class="btn btn-outline" href="#rezultaty">Zobacz rezultaty</a>
-        </div>
-      </div>
-
-      <aside class="premium-card">
-        <div class="premium-badge">👑 PREMIUM</div>
-        <h3>EXCLUSIVE “Empire Builder”</h3>
-        <p class="premium-description">Kompletna dominacja rynku. System generujący miliony wyświetleń.</p>
-        <ul class="premium-features">
-          <li><strong>Premium Content</strong> — 20+ filmów/mies</li>
-          <li><strong>Multi‑Platform</strong> — wszystkie platformy</li>
-          <li><strong>Email Marketing</strong> — sekwencje premium</li>
-          <li><strong>Wyniki</strong> — gwarancja +200%</li>
-        </ul>
-        <div class="premium-price">Od 12 000 zł netto/mies</div>
-        <div class="premium-alert">Tylko 3 miejsca miesięcznie</div>
-        <a href="#kontakt" class="btn btn-premium">Rezerwuj miejsce</a>
-      </aside>
-    </div>
-  </main>
-
-  <!-- SERVICES -->
-  <section id="uslugi" class="services-section">
-    <div class="container">
-      <h2 class="section-title">Moje usługi</h2>
-      <p class="section-subtitle">Od podstawowych usług montażu po kompleksowe strategie content marketingu.</p>
-
-      <div class="service-grid">
-        <article class="service-card">
-          <h3>Short Form Content</h3>
-          <p>Profesjonalny montaż krótkich filmów na TikTok, Reels, YouTube Shorts.</p>
-          <ul>
-            <li>Dynamiczne przejścia i efekty</li>
-            <li>Dopasowanie do trendów</li>
-            <li>Optymalizacja pod algorytmy</li>
-          </ul>
-          <div class="price">Od 150 zł netto / film</div>
-        </article>
-
-        <article class="service-card">
-          <h3>Long Form Content</h3>
-          <p>Montaż dłuższych materiałów: wywiady, webinary, vlogi, prezentacje.</p>
-          <ul>
-            <li>Intro/outro, grafiki, napisy</li>
-            <li>Korekta kolorów i dźwięku</li>
-            <li>Eksport w różnych formatach</li>
-          </ul>
-          <div class="price">Od 600 zł netto / film</div>
-        </article>
-
-        <article class="service-card">
-          <h3>Nagrania wideo / Dron</h3>
-          <p>Profesjonalne nagrania na lokalizacji, ujęcia 4K z lotu ptaka.</p>
-          <ul>
-            <li>Wywiady, prezentacje, testimoniale</li>
-            <li>Nieruchomości, eventy, filmy promocyjne</li>
-            <li>Certyfikowany operator</li>
-          </ul>
-          <div class="price">Od 600–800 zł netto / sesja lub dzień</div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- RESULTS -->
-  <section id="rezultaty" class="results-section">
-    <div class="container">
-      <h2 class="section-title">Moje rezultaty</h2>
-      <p class="section-subtitle">44+ milionów wyświetleń nie kłamie.</p>
-
-      <div class="badges">
-        <div class="badge"><div class="n">30M+</div><div>Facebook Views</div></div>
-        <div class="badge"><div class="n">11M+</div><div>TikTok Views</div></div>
-        <div class="badge"><div class="n">3M+</div><div>YouTube Views</div></div>
-        <div class="badge"><div class="n">20.5K</div><div>TikTok Followers</div></div>
-      </div>
-
-      <div class="social-links">
-        <a class="social-link" href="https://www.facebook.com/BiznesMEN.tv1/" target="_blank" rel="noopener">📘 Facebook</a>
-        <a class="social-link" href="https://www.instagram.com/biznesmentv6/" target="_blank" rel="noopener">📷 Instagram</a>
-        <a class="social-link" href="https://www.tiktok.com/@biznesmen.tv" target="_blank" rel="noopener">🎵 TikTok</a>
-        <a class="social-link" href="https://www.youtube.com/channel/UCMRxp9VIFZvN7JHjLrq4zbQ" target="_blank" rel="noopener">📺 YouTube</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section id="proces" class="process-section">
-    <div class="container">
-      <h2 class="section-title">Proces dominacji</h2>
-      <p class="section-subtitle">6‑krokowy system, który gwarantuje rezultaty.</p>
-      <div class="process-grid">
-        <div class="process-step">
-          <div class="step-number">1</div>
-          <h4>Analiza rynku</h4>
-          <p>Analiza konkurencji i grupy docelowej.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">2</div>
-          <h4>Strategia content</h4>
-          <p>Plan oparty na danych z milionów wyświetleń.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">3</div>
-          <h4>Produkcja premium</h4>
-          <p>Content najwyższej jakości, który wyróżnia.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">4</div>
-          <h4>Multi‑Platform Launch</h4>
-          <p>Publikacja na wszystkich kluczowych platformach.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">5</div>
-          <h4>Email marketing</h4>
-          <p>Sekwencje, które budują relacje.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">6</div>
-          <h4>Optymalizacja</h4>
-          <p>Ciągła analiza i skalowanie wyników.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="kontakt" class="contact-section">
-    <div class="container">
-      <h2 class="section-title">Kontakt VIP</h2>
-      <p class="section-subtitle">Tylko 3 nowych klientów miesięcznie. Odpowiadam do 12h.</p>
-
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h3>Bezplatna konsultacja (60 min)</h3>
-          <ul>
-            <li>Analiza Twojej obecnej strategii content</li>
-            <li>Identyfikacja największych możliwości wzrostu</li>
-            <li>Plan działania na pierwsze 30 dni</li>
-          </ul>
-          <div class="contact-items">
-            <div class="contact-item"><span class="contact-icon">📧</span> <strong>Email:</strong> <span>mikolaj@mikolajmedia.pl</span></div>
-            <div class="contact-item"><span class="contact-icon">📱</span> <strong>Telefon:</strong> <span>+48 XXX XXX XXX</span></div>
-            <div class="contact-item"><span class="contact-icon">📍</span> <strong>Lokalizacja:</strong> <span>Wrocław, Polska</span></div>
-          </div>
-        </div>
-
-        <div class="contact-form-wrapper">
-          <h3>Aplikuj na współpracę</h3>
-          <!-- Netlify Forms -->
-          <form id="contactForm" name="Aplikacja Premium" method="POST" data-netlify="true">
-            <input type="hidden" name="form-name" value="Aplikacja Premium" />
-            <div class="form-row">
-              <label>Imię i nazwisko *</label>
-              <input required name="name" placeholder="Jan Kowalski" />
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">MikolajMedia</div>
+            <div class="nav-links">
+                <a href="#home">Start</a>
+                <a href="#services">Usługi</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#process">Proces</a>
+                <a href="#contact">Kontakt</a>
             </div>
-            <div class="form-row">
-              <label>Email *</label>
-              <input required type="email" name="email" placeholder="email@firma.pl" />
-            </div>
-            <div class="form-row">
-              <label>Telefon *</label>
-              <input required name="phone" placeholder="+48 ..." />
-            </div>
-            <div class="form-row">
-              <label>Firma / Branża *</label>
-              <input required name="company" placeholder="Nazwa firmy / branża" />
-            </div>
-            <div class="form-row">
-              <label>Budżet miesięczny</label>
-              <select name="budget">
-                <option value="">Wybierz przedział</option>
-                <option>5K – 10K zł</option>
-                <option>10K – 25K zł</option>
-                <option>25K – 50K zł</option>
-                <option>50K+ zł</option>
-              </select>
-            </div>
-            <div class="form-row full">
-              <label>Cele biznesowe *</label>
-              <textarea required name="goals" placeholder="Opisz, co chcesz osiągnąć w 30–90 dni"></textarea>
-            </div>
-            <div class="form-actions">
-              <button type="submit" class="btn btn-primary">Wyślij aplikację</button>
-              <p class="note">Wartość konsultacji: 2000 zł — dziś GRATIS.</p>
-            </div>
-          </form>
         </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <footer>
-    <div class="container footer-content">
-      <p>© 2025 MikolajMedia. Wszystkie prawa zastrzeżone. 🚀</p>
-      <p><a href="#start">Do góry ↑</a></p>
-    </div>
-  </footer>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-left">
+                <h1>
+                    <span class="blue">44+ MILIONÓW</span><br>
+                    WYŚWIETLEŃ<br>
+                    TO MOJA <span class="blue">WIZYTÓWKA</span>
+                </h1>
+                <p class="subtitle">
+                    Content Strategist & Marketing Expert. Tworzę systemy content marketingu które generują miliony wyświetleń i tysiące leadów dla najbardziej wymagających klientów.
+                </p>
+                
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <span class="stat-number">44M+</span>
+                        <span class="stat-label">Łączne Wyświetlenia</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">62.5K</span>
+                        <span class="stat-label">Obserwatorzy</span>
+                    </div>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn">Rozpocznij Współpracę</a>
+                    <a href="#portfolio" class="btn btn-outline">Zobacz Rezultaty</a>
+                </div>
+            </div>
+            
+            <div class="hero-right">
+                <div class="visual-box">
+                    <h3>Proven Results</h3>
+                    <p>Specjalizuję się w content marketing dla firm premium</p>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <span class="metric-number">30M+</span>
+                            <span class="metric-label">Facebook</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-number">11M+</span>
+                            <span class="metric-label">TikTok</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-number">3M+</span>
+                            <span class="metric-label">YouTube</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-number">37K</span>
+                            <span class="metric-label">FB Followers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="script.js" defer></script>
-</body>
-</html>
+    <!-- Services Section -->
+    <section class="section services-section" id="services">
+        <div class="container">
+            <h2 class="section-title">MOJE <span class="blue">USŁUGI</span></h2>
+            <p class="section-subtitle">Od podstawowych usług montażu po kompleksowe strategie content marketingu</p>
+            
+            <!-- Basic Services -->
+            <h3 class="service-category-title">Basic Services</h3>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎬</div>
+                    <h3>Montaż Short Form Content</h3>
+                    <p>Profesjonalny montaż krótkich filmów na TikTok, Instagram Reels, YouTube Shorts.</p>
+                    <ul class="service-features">
+                        <li>TikTok, Instagram Reels, YouTube Shorts</li>
+                        <li>Dynamiczne przejścia i efekty</li>
+                        <li>Dopasowanie do trendów</li>
+                        <li>Optymalizacja pod algorytmy</li>
+                    </ul>
+                    <div class="price">Od 150 zł netto/film</div>
+                    <a href="#contact" class="btn">Szczegóły</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📹</div>
+                    <h3>Montaż Long Form Content</h3>
+                    <p>Montaż dłuższych materiałów - wywiady, webinary, vlogi, prezentacje.</p>
+                    <ul class="service-features">
+                        <li>Wywiady, webinary, vlogi</li>
+                        <li>Intro/outro, grafiki, napisy</li>
+                        <li>Korekta kolorów i dźwięku</li>
+                        <li>Eksport w różnych formatach</li>
+                    </ul>
+                    <div class="price">Od 600 zł netto/film</div>
+                    <a href="#contact" class="btn">Szczegóły</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎤</div>
+                    <h3>Nagrania Video</h3>
+                    <p>Profesjonalne nagrania na lokalizacji. Wywiady, prezentacje produktów.</p>
+                    <ul class="service-features">
+                        <li>Nagrania na lokalizacji</li>
+                        <li>Profesjonalne oświetlenie i dźwięk</li>
+                        <li>Wywiady i prezentacje</li>
+                        <li>Testimoniale klientów</li>
+                    </ul>
+                    <div class="price">Od 800 zł netto/dzień</div>
+                    <a href="#contact" class="btn">Szczegóły</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🚁</div>
+                    <h3>Zdjęcia i Filmy z Drona</h3>
+                    <p>Spektakularne ujęcia z lotu ptaka. Profesjonalny dron z kamerą 4K.</p>
+                    <ul class="service-features">
+                        <li>Ujęcia z lotu ptaka 4K</li>
+                        <li>Nieruchomości, eventy</li>
+                        <li>Filmy promocyjne</li>
+                        <li>Certyfikowany operator</li>
+                    </ul>
+                    <div class="price">Od 600 zł netto/sesja</div>
+                    <a href="#contact" class="btn">Szczegóły</a>
+                </div>
+            </div>
+
+            <!-- Premium Services -->
+            <h3 class="service-category-title">Premium Services</h3>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎬</div>
+                    <h3>Premium Content Creation</h3>
+                    <p>Tworzenie contentu wysokiej jakości dla platform społecznościowych.</p>
+                    <ul class="service-features">
+                        <li>Filmy sprzedażowe i promocyjne</li>
+                        <li>Content na wszystkie platformy</li>
+                        <li>Storytelling wizualny</li>
+                        <li>Post-produkcja premium</li>
+                    </ul>
+                    <div class="price">Od 6000 zł netto</div>
+                    <a href="#contact" class="btn">Szczegóły</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Social Media Dominacja</h3>
+                    <p>Kompleksowa obsługa social media z gwarancją wyników.</p>
+                    <ul class="service-features">
+                        <li>Strategia content marketingu</li>
+                        <li>Email marketing premium</li>
+                        <li>Community management</li>
+                        <li>Paid advertising</li>
+                    </ul>
+                    <div class="price">Od 8000 zł netto/mies</div>
+                    <a href="#contact" class="btn">Szczegóły</a>
+                </div>
+
+                <div class="service-card premium-card">
+                    <span class="premium-badge">👑 PREMIUM</span>
+                    <div class="service-icon">👑</div>
+                    <h3 style="text-align: center;">EXCLUSIVE "Empire Builder"</h3>
+                    <p style="text-align: center;">Kompletna dominacja rynku. System generujący miliony wyświetleń.</p>
+                    <div class="premium-features">
+                        <div class="premium-feature">
+                            <strong>Premium Content</strong>
+                            <span>20+ filmów/mies</span>
+                        </div>
+                        <div class="premium-feature">
+                            <strong>Multi-Platform</strong>
+                            <span>Wszystkie platformy</span>
+                        </div>
+                        <div class="premium-feature">
+                            <strong>Email Marketing</strong>
+                            <span>Sekwencje premium</span>
+                        </div>
+                        <div class="premium-feature">
+                            <strong>Wyniki</strong>
+                            <span>Gwarancja +200%</span>
+                        </div>
+                    </div>
+                    <div class="price" style="text-align: center; font-size: 36px;">Od 12000 zł netto/mies</div>
+                    <p style="text-align: center; color: #2563eb; font-weight: bold;">🔥 Tylko 3 miejsca miesięcznie</p>
+                    <div style="text-align: center;">
+                        <a href="#contact" class="btn">Rezerwuj Miejsce</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section portfolio-section" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">MOJE <span class="blue">REZULTATY</span></h2>
+            <p class="section-subtitle">44+ milionów wyświetleń nie kłamie</p>
+            
+            <div class="portfolio-showcase">
+                <h3>BiznesMEN.tv Empire</h3>
+                <p style="text-align: center; color: #cccccc; margin-bottom: 30px;">
+                    Projekt biznesowy z Leszna, którego misją jest rozwój firm na terenie całej Polski.
+                </p>
+                
+                <div class="portfolio-stats">
+                    <div class="portfolio-stat">
+                        <span class="portfolio-number">30M+</span>
+                        <span class="portfolio-label">Facebook Views</span>
+                    </div>
+                    <div class="portfolio-stat">
+                        <span class="portfolio-number">11M+</span>
+                        <span class="portfolio-label">TikTok Views</span>
+                    </div>
+                    <div class="portfolio-stat">
+                        <span class="portfolio-number">3M+</span>
+                        <span class="portfolio-label">YouTube Views</span>
+                    </div>
+                    <div class="portfolio-stat">
+                        <span class="portfolio-number">37K</span>
+                        <span class="portfolio-label">FB Followers</span>
+                    </div>
+                    <div class="portfolio-stat">
+                        <span class="portfolio-number">20.5K</span>
+                        <span class="portfolio-label">TikTok Followers</span>
+                    </div>
+                    <div class="portfolio-stat">
+                        <span class="portfolio-number">5K</span>
+                        <span class="portfolio-label">IG Followers</span>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" class="social-link">📘 Facebook</a>
+                    <a href="#" class="social-link">📷 Instagram</a>
+                    <a href="#" class="social-link">🎵 TikTok</a>
+                    <a href="#" class="social-link">📺 YouTube</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section process-section" id="process">
+        <div class="container">
+            <h2 class="section-title">PROCES <span class="blue">DOMINACJI</span></h2>
+            <p class="section-subtitle">6-krokowy system który gwarantuje rezultaty</p>
+            
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Analiza Rynku</h4>
+                    <p style="color: #cccccc;">Kompleksowa analiza konkurencji i grupy docelowej.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Strategia Content</h4>
+                    <p style="color: #cccccc;">Plan oparty na danych z milionów wyświetleń.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Produkcja Premium</h4>
+                    <p style="color: #cccccc;">Content najwyższej jakości który wyróżnia.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Multi-Platform Launch</h4>
+                    <p style="color: #cccccc;">Publikacja na wszystkich kluczowych platformach.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h4>Email Marketing</h4>
+                    <p style="color: #cccccc;">Sekwencje email które budują relacje.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h4>Optymalizacja</h4>
+                    <p style="color: #cccccc;">Ciągła analiza i skalowanie wyników.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Gotowy na <span class="blue">Dominację?</span></h2>
+            <p class="section-subtitle">Tylko 3 nowych klientów miesięcznie</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Kontakt VIP</h3>
