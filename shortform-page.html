@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montaż Short Form Content - MikolajMedia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            border-bottom: 2px solid #2563eb;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-service {
+            padding: 120px 20px 80px;
+            background: linear-gradient(135deg, #000, #1a1a1a);
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-service h1 {
+            font-size: 48px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .blue {
+            color: #2563eb;
+        }
+
+        .hero-service p {
+            font-size: 20px;
+            color: #ccc;
+            max-width: 800px;
+        }
+
+        .section {
+            padding: 80px 20px;
+        }
+
+        .section:nth-child(even) {
+            background: #0a0a0a;
+        }
+
+        .section-title {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .feature-card {
+            background: rgba(26, 26, 26, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #333;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: #2563eb;
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #2563eb;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .feature-card p {
+            color: #ccc;
+        }
+
+        .pricing-box {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(0, 0, 0, 0.9));
+            border: 3px solid #2563eb;
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 600px;
+            margin: 50px auto;
+        }
+
+        .price-tag {
+            font-size: 48px;
+            color: #2563eb;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .price-features {
+            list-style: none;
+            text-align: left;
+            margin: 30px 0;
+        }
+
+        .price-features li {
+            padding: 10px 0;
+            color: #ccc;
+        }
+
+        .price-features li::before {
+            content: '✓ ';
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .portfolio-item {
+            background: #1a1a1a;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+        }
+
+        .portfolio-video {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+
+        .portfolio-info {
+            padding: 20px;
+        }
+
+        .portfolio-info h3 {
+            margin-bottom: 10px;
+            color: #2563eb;
+        }
+
+        .portfolio-info p {
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            color: #2563eb;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 12px;
+        }
+
+        .process-timeline {
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-number {
+            width: 50px;
+            height: 50px;
+            background: #2563eb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .timeline-content p {
+            color: #ccc;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 25px;
+            top: 50px;
+            width: 2px;
+            height: 40px;
+            background: #2563eb;
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 2px solid #2563eb;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">MikolajMedia</a>
+            <div class="nav-links">
+                <a href="index.html">Strona Główna</a>
+                <a href="#features">Cechy</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#pricing">Cennik</a>
+                <a href="#contact">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-service">
+        <div class="container">
+            <h1><span class="blue">MONTAŻ</span> SHORT FORM CONTENT</h1>
+            <p>Profesjonalny montaż krótkich filmów na TikTok, Instagram Reels i YouTube Shorts. 
+            Tworzę viralne treści, które przyciągają uwagę i generują zasięgi.</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section" id="features">
+        <div class="container">
+            <h2 class="section-title">CO <span class="blue">OTRZYMUJESZ</span></h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Szybki Montaż</h3>
+                    <p>Realizacja w 24-48h. Twoje filmy są gotowe gdy Ty ich potrzebujesz.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Kreatywne Przejścia</h3>
+                    <p>Dynamiczne efekty i przejścia, które zatrzymują uwagę widzów.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Optymalizacja</h3>
+                    <p>Montaż zgodny z najnowszymi trendami i algorytmami platform.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎵</div>
+                    <h3>Muzyka i Dźwięk</h3>
+                    <p>Dobór muzyki i efektów dźwiękowych, które wzmacniają przekaz.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Format 9:16</h3>
+                    <p>Idealny format vertical video dla wszystkich platform.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔥</div>
+                    <h3>Viralne Hooki</h3>
+                    <p>Pierwsze 3 sekundy, które decydują o sukcesie filmu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">PROCES <span class="blue">REALIZACJI</span></h2>
+            
+            <div class="process-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-content">
+                        <h3>Analiza Materiału</h3>
+                        <p>Przeglądam Twoje nagrania i wybieram najlepsze fragmenty do montażu.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-content">
+                        <h3>Montaż i Efekty</h3>
+                        <p>Dodaję dynamiczne przejścia, efekty wizualne i dopasowuję tempo.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-content">
+                        <h3>Muzyka i Dźwięk</h3>
+                        <p>Dobieram odpowiednią muzykę i efekty dźwiękowe zgodne z trendami.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-number">4</div>
+                    <div class="timeline-content">
+                        <h3>Napisy i Grafiki</h3>
+                        <p>Dodaję przyciągające uwagę napisy i elementy graficzne.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-number">5</div>
+                    <div class="timeline-content">
+                        <h3>Finalizacja</h3>
+                        <p>Eksportuję w optymalnej jakości dla każdej platformy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section" id="pricing">
+        <div class="container">
+            <h2 class="section-title">INWESTYCJA W <span class="blue">TWÓJ SUKCES</span></h2>
+            
+            <div class="pricing-box">
+                <h3 style="font-size: 32px; margin-bottom: 20px;">Montaż Short Form Content</h3>
+                <div class="price-tag">150 zł netto/film</div>
+                
+                <ul class="price-features">
+                    <li>Montaż do 60 sekund</li>
+                    <li>Dynamiczne przejścia i efekty</li>
+                    <li>Dobór muzyki z biblioteki</li>
+                    <li>Napisy i podstawowe grafiki</li>
+                    <li>Optymalizacja pod algorytmy</li>
+                    <li>Format 9:16 (vertical)</li>
+                    <li>Realizacja 24-48h</li>
+                    <li>2 poprawki w cenie</li>
+                    <li>Eksport dla TikTok, Reels, Shorts</li>
+                </ul>
+                
+                <a href="#contact" class="btn">ZAMÓW TERAZ</a>
+                
+                <p style="margin-top: 20px; color: #ccc;">
+                    💡 Pakiety rabatowe:<br>
+                    10+ filmów = -10%<br>
+                    20+ filmów = -15%<br>
+                    50+ filmów = -20%
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">NAJCZĘŚCIEJ ZADAWANE <span class="blue">PYTANIA</span></h2>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="background: rgba(26, 26, 26, 0.9); padding: 30px; border-radius: 15px; margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">Jak długo trwa realizacja?</h3>
+                    <p style="color: #ccc;">Standardowo 24-48h od przesłania materiałów. W przypadku większych zleceń ustalamy indywidualny harmonogram.</p>
+                </div>
+                
+                <div style="background: rgba(26, 26, 26, 0.9); padding: 30px; border-radius: 15px; margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">W jakim formacie powinienem przesłać materiały?</h3>
+                    <p style="color: #ccc;">Akceptuję wszystkie popularne formaty video (MP4, MOV, AVI). Najlepiej w najwyższej dostępnej jakości.</p>
+                </div>
+                
+                <div style="background: rgba(26, 26, 26, 0.9); padding: 30px; border-radius: 15px; margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">Czy mogę dostarczyć własną muzykę?</h3>
+                    <p style="color: #ccc;">Oczywiście! Możesz dostarczyć własną muzykę lub wskazać preferowany styl. Mogę też dobrać muzykę z bibliotek bez praw autorskich.</p>
+                </div>
+                
+                <div style="background: rgba(26, 26, 26, 0.9); padding: 30px; border-radius: 15px; margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">Ile poprawek jest w cenie?</h3>
+                    <p style="color: #ccc;">W cenie są 2 rundy poprawek. Dodatkowe poprawki wyceniam indywidualnie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" id="contact">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">GOTOWY NA <span class="blue">VIRALA?</span></h2>
+            <p style="font-size: 20px; color: #ccc; margin-bottom: 30px;">
+                Dołącz do grona zadowolonych klientów, których filmy generują miliony wyświetleń!
+            </p>
+            
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="mailto:mikolaj@mikolajmedia.pl" class="btn">📧 NAPISZ DO MNIE</a>
+                <a href="tel:+48XXXXXXXXX" class="btn" style="background: transparent; border: 2px solid #2563eb;">📱 ZADZWOŃ</a>
+            </div>
+            
+            <p style="margin-top: 30px; color: #ccc;">
+                Odpowiadam w ciągu 12h | Priorytet VIP
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 MikolajMedia. Wszystkie prawa zastrzeżone. 
+            <span class="blue">44+ Milionów Wyświetleń & Counting 🚀</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navbarHeight = 70;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+    <!-- Portfolio Section -->
+    <section class="section" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">MOJE <span class="blue">REALIZACJE</span></h2>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-video">▶️</div>
+                    <div class="portfolio-info">
+                        <h3>Kampania TikTok - Tech Startup</h3>
+                        <p>Seria 10 filmów produktowych</p>
+                        <div class="stats-row">
+                            <div class="stat">
+                                <span class="stat-value">2.5M</span>
+                                <span class="stat-label">Wyświetleń</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">125K</span>
+                                <span class="stat-label">Polubień</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">8.5K</span>
+                                <span class="stat-label">Udostępnień</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-video">▶️</div>
+                    <div class="portfolio-info">
+                        <h3>Instagram Reels - Fashion Brand</h3>
+                        <p>Content modowy - 15 filmów</p>
+                        <div class="stats-row">
+                            <div class="stat">
+                                <span class="stat-value">1.8M</span>
+                                <span class="stat-label">Wyświetleń</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">95K</span>
+                                <span class="stat-label">Polubień</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">5.2K</span>
+                                <span class="stat-label">Komentarzy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-video">▶️</div>
+                    <div class="portfolio-info">
+                        <h3>YouTube Shorts - Edukacja</h3>
+                        <p>Seria edukacyjna - 20 filmów</p>
+                        <div class="stats-row">
+                            <div class="stat">
+                                <span class="stat-value">3.2M</span>
+                                <span class="stat-label">Wyświetleń</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">180K</span>
+                                <span class="stat-label">Polubień</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">+15K</span>
+                                <span class="stat-label">Subskrybentów</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
